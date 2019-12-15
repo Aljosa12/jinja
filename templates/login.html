@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>For login type your name and password please</h1>
+{% endblock %}
+
+{% block maincontent %}
+<br>
+<form method="POST">
+  <div class="row">
+    <div class="col">
+      <input type="text" style="width: 300px;" class="form-control" placeholder="First name" name="vnos-imena">
+    </div>
+    <div class="col">
+      <input type="text" style="width: 300px;" class="form-control" placeholder="Last name" name="last-name">
+    </div>
+    <div class="col">
+      <input type="password" style="width: 300px;" class="form-control" placeholder="Password" name="geslo">
+    </div>
+  </div>
+  <br>
+    <input class="btn btn-outline-success" type="submit" value=" Login " />
+</form>
+{% endblock maincontent %}

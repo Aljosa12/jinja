@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello World, welcom to our page</h1>
+{% endblock %}
+
+{% block button %}
+<p style="font-size: 25px;">Proceed to login</p>
+<form action="http://127.0.0.1:5000/login">
+    <input class="btn btn-outline-success" type="submit" value=" Login " />
+</form>
+{% endblock button%}

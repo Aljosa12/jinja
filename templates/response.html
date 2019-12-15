@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>
+    Thank you for login {{ user }}, your password is set to: {{ geslo }}
+</h1>
+<br>
+{% endblock %}
+
+{% block maincontent %}
+    <img style="height: 200px; width: 200px; border-radius: 15px;" src="../static/img/avatar.jpg">
+    <div style="margin-left: 1%; font-decoration: bold;">
+        <b>{{ user }}</b>
+    </div>
+    <br>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Alias culpa delectus error fugiat labore molestias non,
+        pariatur perferendis. Accusantium asperiores dolore,
+        explicabo fugit ipsum laudantium minus pariatur totam
+        vitae voluptatum.
+    </p>
+{% endblock maincontent %}
+
+{% block button %}
+<form action="http://127.0.0.1:5000/logout">
+    <input class="btn btn-outline-success" type="submit" value=" Logout " />
+</form>
+{% endblock button%}

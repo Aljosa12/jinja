@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, url_for
+from models import User, db
+
+db.create_all()
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def base():
@@ -16,14 +18,19 @@ def on_about():
 @app.route("/login", methods=["POST"])
 def on_about_post():
     ime = request.form.get("vnos-imena")
-    priimek = request.form.get("last-name")
+    email = request.form.get("email")
     geslo = request.form.get("geslo")
+
+    user = User(email=email, user=ime, geslo=geslo)
+
+    db.add(user)
+    db.commit()
+
     response = make_response(
-        render_template(
-            "response.html", priimek=priimek, user=ime, geslo=geslo)
+        redirect(url_for(
+        ))
     )
-    response.set_cookie("ime", ime)
-    response.set_cookie("priimek", priimek)
+
     return response
 
 @app.route("/logout")
